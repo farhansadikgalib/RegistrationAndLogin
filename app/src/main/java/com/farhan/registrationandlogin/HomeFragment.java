@@ -20,7 +20,8 @@ public class HomeFragment extends Fragment {
 
 
     private TextView emailTV;
-
+    private TextView nameTV;
+    private TextView phoneTV;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -37,14 +38,17 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        String name = getArguments().getString("name");
+        String phone = getArguments().getString("phone");
         String email = getArguments().getString("email");
-
+        nameTV = view.findViewById(R.id.nameTV);
         emailTV = view.findViewById(R.id.emailTV);
+        phoneTV = view.findViewById(R.id.phoneTV);
+        nameTV.setText(name);
+        phoneTV.setText(phone);
         emailTV.setText(email);
 
 
-        return;
 
     }
 }

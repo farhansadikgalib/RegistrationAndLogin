@@ -1,6 +1,7 @@
 package com.farhan.registrationandlogin;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements RegistrationFragm
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         RegistrationFragment registrationFragment = new RegistrationFragment();
@@ -30,17 +30,18 @@ public class MainActivity extends AppCompatActivity implements RegistrationFragm
 
 
     public void getEmail(String email){
-        Toast.makeText(this,email,Toast.LENGTH_SHORT).show();
 
 
     }
 
     @Override
-    public void onSingUpComplete(String email) {
+    public void onSingUpComplete(String name,String phone,String email) {
 
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Bundle bundle = new Bundle();
+        bundle.putString("name",name);
+        bundle.putString("phone",phone);
         bundle.putString("email",email);
         HomeFragment homeFragment = new HomeFragment();
         homeFragment.setArguments(bundle);

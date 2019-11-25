@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.collection.ArraySet;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,8 +20,9 @@ import android.widget.EditText;
  */
 public class RegistrationFragment extends Fragment {
     EditText emailET;
-    EditText numberET;
+    EditText nameET;
     EditText passET;
+    EditText phoneET;
     Button reg_btn;
 
     private SingupInterface singupInterface;
@@ -43,20 +45,21 @@ public class RegistrationFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        nameET = view.findViewById(R.id.nameET);
         emailET = view.findViewById(R.id.emailET);
-        numberET = view.findViewById(R.id.phoneET);
+        phoneET = view.findViewById(R.id.phoneET);
         passET = view.findViewById(R.id.passET);
         reg_btn = view.findViewById(R.id.btn_singUp);
         reg_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                String name = nameET.getText().toString();
+                String phone = phoneET.getText().toString();
                 String email = emailET.getText().toString();
-                String phone = numberET.getText().toString();
                 String pass= passET.getText().toString();
 
                 singupInterface = (SingupInterface) getActivity();
-                singupInterface.onSingUpComplete(email);
+                singupInterface.onSingUpComplete(name,phone,email);
 
             }
         });
@@ -68,7 +71,7 @@ public class RegistrationFragment extends Fragment {
 
     interface SingupInterface {
 
-        void  onSingUpComplete(String email);
+        void  onSingUpComplete(String name,String phone,String email);
 
 
     }
