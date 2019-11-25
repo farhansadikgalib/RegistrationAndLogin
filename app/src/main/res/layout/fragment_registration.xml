@@ -26,14 +26,25 @@
             android:layout_marginBottom="50dp"/>
 
 
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameET"
+            android:hint="Name"
+            android:padding="5dp"
+            android:layout_marginBottom="15dp"/>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/emailET"
-            android:hint="User Email"
+            android:hint="Email"
             android:inputType="textEmailAddress"
             android:padding="5dp"
             android:layout_marginBottom="15dp"/>
+
+
 
         <EditText
             android:layout_width="match_parent"
@@ -54,6 +65,9 @@
             android:padding="5dp"/>
 
 
+
+
+
         <Button
             android:layout_marginTop="20sp"
             android:layout_width="wrap_content"
@@ -64,16 +78,6 @@
             android:textSize="20sp"
             android:textAlignment="center"
             android:layout_gravity="center"/>
-
-
-
-
-
-
-
-
-
-
 
 
 
