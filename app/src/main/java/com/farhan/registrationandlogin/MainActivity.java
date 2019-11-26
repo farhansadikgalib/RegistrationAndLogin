@@ -29,10 +29,6 @@ public class MainActivity extends AppCompatActivity implements RegistrationFragm
     }
 
 
-    public void getEmail(String email){
-
-
-    }
 
     @Override
     public void onSingUpComplete(String name,String phone,String email) {
