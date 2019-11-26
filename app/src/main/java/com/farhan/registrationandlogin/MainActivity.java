@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements RegistrationFragm
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    fragmentManager = getSupportFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         RegistrationFragment registrationFragment = new RegistrationFragment();
         fragmentTransaction.add(R.id.fragmentContainer,registrationFragment);
@@ -36,13 +36,17 @@ public class MainActivity extends AppCompatActivity implements RegistrationFragm
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         Bundle bundle = new Bundle();
-        bundle.putString("name",name);
-        bundle.putString("phone",phone);
-        bundle.putString("email",email);
-        HomeFragment homeFragment = new HomeFragment();
-        homeFragment.setArguments(bundle);
-        fragmentTransaction.replace(R.id.fragmentContainer,homeFragment);
-        fragmentTransaction.commit();
+            bundle.putString("name",name);
+            bundle.putString("phone",phone);
+            bundle.putString("email",email);
+            HomeFragment homeFragment = new HomeFragment();
+            homeFragment.setArguments(bundle);
+            fragmentTransaction.replace(R.id.fragmentContainer,homeFragment);
+            fragmentTransaction.commit();
+
+
+
+
 
 
 
